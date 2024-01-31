@@ -1,0 +1,64 @@
+/* header bg */
+.header{
+    background-color: #e6e6e642;
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* info bg */
+.infoDisplay{
+    background-color: #0ea5e9;
+    border-radius: 25px;
+    height: 25vh;
+    
+}
+
+/* description bg */
+.descriptionDisplay{
+    background-color: #d9d9d92d;
+    filter: drop-shadow(0px 50px 50pxD9D9D9);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-left: 2%;
+    height: 15vh;
+}
+
+/* evolution bg */
+.evolutionDisplay{
+    background-color: #313131;
+    color:white;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 75px;
+    height: 35vh;
+}
+
+/* random button */
+.btnColor{
+    background-color: #EE6B2F;
+    border-color: #EE6B2F;
+    border-width: 1px;
+    border-radius: 25px;
+    padding: 1.5%;
+}
+
+.btnColor p {
+    color: white;
+}
+
+.btnColor:hover{
+    background-color: #ee6b2fce;
+    border-color:black;
+    border-width: 1px;
+    border-width: 3px solid;
+}
+
+.btnColor:hover p{
+    color:black;
+    font-size: larger;
+}
