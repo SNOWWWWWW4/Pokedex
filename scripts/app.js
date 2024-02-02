@@ -17,12 +17,12 @@ let typeDiv = document.getElementById("typeDiv");
 
 
 // let none = document.getElementById("none");
-let start = document.getAnimations("start");
-let startNam = document.getAnimations("startNam");
-let middle = document.getAnimations("middle");
-let middleNam = document.getAnimations("middleNam");
-let end = document.getAnimations("end");
-let endName = document.getAnimations("endName");
+let start = document.getElementById("start");
+let startNam = document.getElementById("startNam");
+let middle = document.getElementById("middle");
+let middleNam = document.getElementById("middleNam");
+let end = document.getElementById("end");
+let endName = document.getElementById("endName");
 
 
 let poki = "";
@@ -292,6 +292,10 @@ rndBtn.addEventListener('click', async () =>{
     } else {
         locationDiv.textContent = pokiLoc[0].location_area.name.split("-").join(" ");
     }
+    
+    // type
+    const type = poki.types.map(type => type.type.name).join(", ");
+    typeDiv.textContent = type;
 
     // description
     const desc = await fetch(poki.species.url);
@@ -302,9 +306,7 @@ rndBtn.addEventListener('click', async () =>{
     // evolution ?
     const ev = await fetch(description.evolution_chain.url)
     const evolvePathWay = await ev.json();
-    let howManyForms = evolvePathWay.map()
-    console.log()
-
+    
     if(evolvePathWay.chain.evolves_to == 0){
         const firstForm = evolvePathWay.chain.species.name;  // .chain.species.name; is first form
         startNam.textContent = firstForm;
@@ -326,7 +328,7 @@ rndBtn.addEventListener('click', async () =>{
         console.log(`Has Three Forms`);
         const firstForm = evolvePathWay.chain.species.name;  // .chain.species.name; is first form
         startNam.textContent = firstForm;
-        console.log(`first form is ${startNam}`);
+        console.log(`first form is ${firstForm}`);
         console.log(firstForm);
     
         const secondForm = evolvePathWay.chain.evolves_to[0].species.name; // .chain.evolves_to[0].species.name
@@ -335,30 +337,29 @@ rndBtn.addEventListener('click', async () =>{
         console.log(secondForm);
     
         // .chain.evolves_to[0].evolves.to[0].species.name
-        const thirdForm = evolvePathWay.chain.evolves_to[0].evolves.to[0].species.name;
+        const thirdForm = evolvePathWay.chain.evolves_to[0].evolves_to[1].species.name;
         endName.textContent = thirdForm;
         console.log(`third form is ${endName}`);
+        console.log(thirdForm);
     }
 
+   
 
 
 
-
-    // type
-    const type = poki.types.map(type => type.type.name).join(", ");
-    typeDiv.textContent = type;
 
 
 })
 
-let test = document.getElementById("test");
+// let test = document.getElementById("test");
 
-test.addEventListener('click', async() => {
+// test.addEventListener('click', async() => {
     
-    console.log("button works")
-    // let random = Math.floor(Math.random() * 649);
-    // poki = await pokemonApi(random);
-    // evolutionApiCall();
+//     console.log("button works")
+//     // let random = Math.floor(Math.random() * 649);
+//     // poki = await pokemonApi(random);
+//     // evolutionApiCall();
     
-})
+// })
+
 

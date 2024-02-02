@@ -1243,6 +1243,10 @@ input:checked + .toggle-bg {
   margin-bottom: 2.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1315,6 +1319,34 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
+.h-\[25vh\] {
+  height: 25vh;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[15\] {
+  height: 15;
+}
+
+.h-\[15vh\] {
+  height: 15vh;
+}
+
+.h-\[15\/vh\] {
+  height: 15/vh;
+}
+
+.h-\[5vh\] {
+  height: 5vh;
+}
+
+.h-\[22vh\] {
+  height: 22vh;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -1349,6 +1381,14 @@ input:checked + .toggle-bg {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[22vh\] {
+  width: 22vh;
 }
 
 .max-w-lg {
@@ -2280,6 +2320,30 @@ input:checked + .toggle-bg {
 
   .lg\:h-\[30vh\] {
     height: 30vh;
+  }
+
+  .lg\:h-\[\] {
+    height: ;
+  }
+
+  .lg\:h-\[-\] {
+    height: -;
+  }
+
+  .lg\:h-\[-30\] {
+    height: -30;
+  }
+
+  .lg\:h-\[30\] {
+    height: 30;
+  }
+
+  .lg\:h-\[35\] {
+    height: 35;
+  }
+
+  .lg\:h-\[3\] {
+    height: 3;
   }
 
   .lg\:grid-cols-2 {
