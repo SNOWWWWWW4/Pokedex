@@ -206,7 +206,7 @@ const preview = async (pokiM) => {
         }
 }
 
-preview("garchomp");
+preview("1");
 
 
 // lg search function   (flowbite navbar had two inputs with the same ID so this was my work around that issue)
