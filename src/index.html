@@ -3,19 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link href="../dist/output.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
         <link href="../styles/style.css" rel="stylesheet">
         <title>Not Not Pokedex</title>
     </head>
 
     <body>
-        
         <!-- Start of Navabar -->
         <nav class="bg-gray-800 border-gray-800 dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="../assets/branden-skeli-scIHlUcnFEI-unsplash.jpg" class="rounded-full w-8 h-8" alt="Pokeball" />
+            <a href="https://pokeapi.co/" class="flex items-center space-x-3 rtl:space-x-reverse navImg" target=”_blank”>
+                <img class="bg-cover rounded-full h-10 w-10 border-2 border-sky-200" src="../assets/branden-skeli-scIHlUcnFEI-unsplash.jpg"/>
                 <span class="self-center text-2xl font-semibold text-white whitespace-nowrap dark:text-white">Not not a Pokedex</span>
             </a>
             <div class="flex md:order-2">
@@ -32,7 +31,7 @@
                 </svg>
                 <span class="sr-only">Search icon</span>
                 </div>
-                <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+                <input type="text" id="searchh" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
             </div>
             <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -54,15 +53,16 @@
                 </div>
 
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-800 rounded-lg bg-gray-800 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-800 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                    <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">Favorites</a>
-                </li>
-                
+                    <li class="navText">
+                        <!-- drawer toggle on btn -->
+                        <a href="#" id="favoritesBtn" class=" block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">Favorites</a>
+                    </li>
                 </ul>
             </div>
             </div>
         </nav>
-        <!-- end of navbar -->
+        
+
 
         <!-- drawer component -->
         <div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
@@ -76,66 +76,112 @@
             <span class="sr-only">Close menu</span>
             </button>
             
-            <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">S</p>
-            <div class="grid grid-cols-2 gap-4">
-                <p>01</p>
-                <p>02</p>
+            <div class="grid grid-cols-1">
+                <div id="favoritesDiv">01</div>
             </div>
         </div>
-        <!-- end of drawer -->
-        
-        <!-- Start -->
-        <div class="mt-5">
-            <div class="grid grid-cols-2 gap-4">
-                <!-- column One -->
-                <!-- mx-auto -->
+
+
+
+        <!-- Container -->
+        <div class="m-5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+                <!-- Column One -->
                 <div class="ms-4">
-                    <div class="flex flex-row justify-center text-2xl md:text-3xl lg:text-5xl header ">
+                    <!-- Header -->
+                    <div class="flex flex-row justify-center text-2xl md:text-3xl lg:text-5xl  ">
                         <h1 id="pokemonName" class="me-2 ms-2 mt-1 mb-1">Charmander</h1>
-                        <h1 id="pokemonNum" class="me-4 mt-1 mb-1">#004</h1>
-                        <img src="../assets/star.png" alt="star" class="me-4 mt-1 mb-1"/>
+                        <h1 id="pokemonNum" class="me-4 mt-1 mb-1 text-gr">#004</h1>
+                        <!-- favorites -->
+                        <img id="starBtn" src="../assets/star.png" alt="star img" class="me-4 sm-4 mt-1 mb-1 headerImg"/>
                     </div>
                     
-                    
-                    <div id="imgDiv" class="mt-2"><img class="h-auto max-w-lg rounded-lg" src="" alt="pokimon img" height="" /></div>
-
-                    <div class="p-4 border-4 grid grid-cols-3 infoDisplay">
+                    <!-- Hero Img -->
+                    <div class="mt-2 flex justify-center">
+                        <img id="imgHero" class="h-auto max-w-lg rounded-lg" src="" alt="pokimon img" />
+                    </div>
+ 
+                    <!-- Abilities, Moves, and Location Section -->
+                    <div class="p-4 grid grid-cols-1 lg:grid-cols-3 space-x-2 bg-sky-500 rounded-lg">
                         <div>
                             <h1 class="text-white">Abilities</h1>
-                            <div id="abilitiesDiv" class="overflow-auto"></div>
+                            <div id="abilitiesDiv" class="h-[20vh] w-full rounded-lg border border-black p-2">01</div>
                         </div>
                         
                         <div>
                             <h1 class="text-white">Moves</h1>
-                            <div id="movesDiv" class="overflow-auto ..."></div>
+                            <div id="movesDiv" class="overflow-y-auto h-[20vh] w-full rounded-lg border border-black p-2">02</div>
                         </div>
 
                         <div>
                             <h1 class="text-white">Location</h1>
-                            <div id="locationDiv"></div>
+                            <div id="locationDiv" class="h-[20vh] w-full rounded-lg border border-black p-2">03</div>
                         </div>
                     </div>
 
                 </div>
+               
 
                 <!-- Column two -->
-                <div class="p-4 border-4">
-                    <div class="descriptionDisplay ">
-                        <h1 id="dscpt">Lorem</h1>
+                <div class="p-4">
+
+                    <!-- Description section-->
+                    <div class="p-4 bg-gray-300 rounded-xl h-[20vh] w-full grid grid-cols-1 ">
+                        <h1 class="pb-0">
+                            Description
+                            <div id="dscpt" class=" ms-2 md:ms-4 lg:ms-6"></div>
+                        </h1>
                     </div>
-                    <div class="mt-6 mb-6">
+                    
+                    <!-- Type section-->
+                    <div class="p-4 mt-6 mb-6">
                         <h1>Type</h1>
                         <div id="typeDiv"></div>
                     </div>
-                    <div class="evolutionDisplay mb-6">Evolutions</div>
-                    <div>
+
+                    <!-- Evolution Section --> 
+                    <div class=" evolutionDisplay scroll-smooth sm:overflow-auto md:h-[22vh] lg:h-[25vh] w-full p-4 grid grid-cols-1 lg:grid-cols-3 space-x-2 mb-10">
+                        <div>
+                            <h1 class="text-white">Evolutions</h1>
+
+                            <div class="flex justify-center">
+                                <img id="start" class="rounded-full border-4 border-gray-400 mt-1 flex justify-center" src="" alt="base stage pokemon"/>
+                            </div>
+                            <h1 id="startNam" class="mt-2 flex justify-center">01</h1>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-center">
+                                <img id="middle" class="rounded-full border-4 border-gray-400 mt-6 flex justify-center" src="" alt="middle stage pokemon"/>
+                            </div>
+                            <h1 id="middleNam" class="mt-2 flex justify-center">02</h1>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-center">
+                                <img id="end" class="rounded-full border-4 border-gray-400 mt-6" src="" alt="end stage pokemon"/>
+                            </div>
+                            <h1 id="endNam" class="mt-2 flex justify-center">03</h1>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Random Fucntion btn -->
+                    <div class="flex justify-center">
                         <button id="rndBtn" type="button" class="btnColor"><p>Random Pokemon</p></button>
                     </div>
+
+                    <div class="flex justify-center mt-10">*click on images for a surprise*</div>
+
+                    <div><button id="test" class="bg-sky-900 text-white rounded-lg p-3">Testing Evolutions</button></div>
+
                 </div>
+                <!-- End of column two -->
             </div>
         </div>
         
-        <script src="./scripts/app.js"></script>
+        <script type="module" src="../scripts/app.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
         <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
     </body>
