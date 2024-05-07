@@ -54,8 +54,7 @@ const pokemonApi = async (poki) => {
 // onLoad
 const preview = async (pokiM) => {
     poki = await pokemonApi(pokiM);
-        console.log("keydown2 works");
-        let favorites = getlocalStorage();
+    
 
         // Favorite btn (star)
         updateStarButton();
